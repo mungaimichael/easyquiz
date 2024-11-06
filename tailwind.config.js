@@ -23,14 +23,18 @@ export default {
         '5xl': '4.210rem',
       },
       fontFamily: {
-        heading: ['heading', 'system-ui', 'sans-serif'],
+        heading: ['Montserrat', 'system-ui', 'sans-serif'],
         body: ['Roboto', 'sans-serif']
       },
       fontWeight: {
-        regular: '300',
+        thin: '100',
+        light: '300',
         normal: '400',
+        medium: '500',
+        semibold: '600',
         bold: '700',
-      },
+        black: '900',
+      }
 
     },
   },

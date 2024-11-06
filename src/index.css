@@ -6,35 +6,21 @@
     :root {
         --text: #081707;
         --background: #ebf8e8;
-        --primary: #2b7425;
+        --primary: #B0B1F3;
         --secondary: #152E32;
         --accent: #E1FEC7;
     }
     .dark {
         --text: #e9f8e8;
         --background: #0a1707;
-        --primary: #91da8b;
+        --primary: #616099;
         --secondary: #276977;
         --accent: #4a7fc4;
     }
     @font-face {
-        font-family: 'heading';
-        src: url(/fonts/Regular.ttf) format('truetype');
-        font-weight: 400;
-        font-style: normal;
-        font-display: swap;
-    }
-    @font-face {
-        font-family: 'heading';
-        src: url(/fonts/Medium.ttf) format('truetype');
-        font-weight: 500;
-        font-style: normal;
-        font-display: swap;
-    }
-    @font-face {
-        font-family: 'heading';
-        src: url(/fonts/Bold.ttf) format('truetype');
-        font-weight: 700;
+        font-family: 'Montserrat';
+        src: url(/fonts/Montserrat.ttf) format('truetype');
+
         font-style: normal;
         font-display: swap;
     }
