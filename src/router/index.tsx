@@ -1,6 +1,6 @@
 import { RouterProvider} from "react-router";
 import {createBrowserRouter} from "react-router-dom";
-import LoginPage from "../pages/Login";
+import Register from "../pages/Register";
 import {Layout} from "./Layout.tsx";
 import Homepage from "../pages/Homepage";
 
@@ -16,7 +16,7 @@ export default  function AppRouter() {
                 },
                 {
                     path:'login',
-                    element:<LoginPage/>
+                    element:<Register/>
                 }
             ]
         }
