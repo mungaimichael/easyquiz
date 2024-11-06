@@ -4,9 +4,9 @@ export default  function Hero () {
         className=" h-full w-full flex flex-col justify-around items-center "
         >
             <div
-                className="h-full w-full flex flex-col  gap-4 items-center"
+                className="h-full w-full flex flex-col gap-5 justify-start items-center"
             >
-                <h3 className=" text-secondary font-heading font-semibold  capitalize text-4xl  text-center ">
+                <h3 className=" text-secondary font-heading font-bold  capitalize text-2xl  text-center ">
                     Fun and easy games to play and enjoy
                 </h3>
                 <p className="  lowercase text-md  text-center ">
