@@ -23,10 +23,11 @@ export default {
         '5xl': '4.210rem',
       },
       fontFamily: {
-        heading: 'Roboto',
-        body: 'Varta',
+        heading: ['heading', 'system-ui', 'sans-serif'],
+        body: ['Roboto', 'sans-serif']
       },
       fontWeight: {
+        regular: '300',
         normal: '400',
         bold: '700',
       },
