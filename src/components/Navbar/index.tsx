@@ -1,9 +1,13 @@
-import {useState} from "react";
+import {useState, Dispatch, SetStateAction} from "react";
 import {Link} from "react-router-dom";
 
 export default  function Navbar() {
 
     const [showMobileMenu, setShowMobileMenu] = useState(false)
+
+
+
+
     return (
         <div className={`w-full h-14  flex items-center justify-between  `} >
             <div
@@ -30,14 +34,17 @@ export default  function Navbar() {
                 />
             </div>
             {
-                showMobileMenu ? <MobileMenu/> : null
+                showMobileMenu ? <MobileMenu
+                    setShowMobileMenu={setShowMobileMenu}
+                /> : null
             }
         </div>
     )
 }
 
 
-const MobileMenu = () => {
+const MobileMenu = ({setShowMobileMenu}:{setShowMobileMenu: Dispatch<SetStateAction<boolean>>}) => {
+
     return (
         <div
         className={"min-h-screen w-full top-0 right-0 flex flex-col justify-between absolute bg-secondary"}
@@ -48,12 +55,17 @@ const MobileMenu = () => {
                 <li
                     className={"text-text text-3xl capitalize"}
                 >About</li>
-                <li
-                    className={"text-text text-3xl capitalize"}
-
+                <Link
+                    onClick={()=>setShowMobileMenu(false)}
+                    to={"/login"}
                 >
-                    login
-                </li>
+                    <li
+                        className={"text-text text-3xl capitalize"}
+
+                    >
+                        login
+                    </li>
+                </Link>
             </ul>
         </div>
     )
