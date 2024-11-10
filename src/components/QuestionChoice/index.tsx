@@ -1,20 +1,38 @@
 interface QuestionChoiceProps {
-    letter: string,
-    answer: string,
-    onClick: () => void
+    letter: string;
+    answer: string;
+    correctAnswer: string;
+    onClick: (selectedAnswer: string) => void;
+    selectedAnswer: string | null;
 }
 
-export default  function QuestionChoice({letter, answer, onClick}: QuestionChoiceProps) {
+export default function QuestionChoice({
+                                           letter,
+                                           answer,
+                                           correctAnswer,
+                                           onClick,
+                                           selectedAnswer
+                                       }: QuestionChoiceProps) {
+    const isCorrect = selectedAnswer && selectedAnswer === correctAnswer;
+    const isSelected = selectedAnswer && selectedAnswer === answer;
+    const choiceClasses = `w-full h-14 flex items-center gap-4 px-2 cursor-pointer bg-accent ${
+        isSelected
+            ? isCorrect
+                ? 'border-2 border-green-500 opacity-100'
+                : 'border-2 border-red-500 opacity-50'
+            : selectedAnswer
+                ? ''
+                : ''
+    }`;
+
     return (
-        <div className={"w-full h-14 bg-accent flex items-center gap-4 px-2  "} >
-            <div
-                className={"h-5/6 w-[50px] rounded-md  flex items-center justify-center cursor-pointer bg-black"}
-                 onClick={onClick} >
-                <h3 className={"text-white font-heading text-xl"} >{letter}</h3>
+        <div onClick={() => onClick(answer)} className={choiceClasses}>
+            <div className="h-5/6 w-[50px] rounded-md flex items-center justify-center bg-black">
+                <h3 className="text-white font-heading text-xl">{letter}</h3>
             </div>
-            <div className={"h-5/6 w-full  flex items-center "} >
-                <h3 className={"text-text font-heading text-md"} >{answer}</h3>
+            <div className="h-5/6 w-full flex items-center">
+                <h3 className="text-text font-heading text-md">{answer}</h3>
             </div>
         </div>
-    )
+    );
 }
