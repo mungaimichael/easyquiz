@@ -6,7 +6,7 @@ async function fetchQuestions():Promise<Question[] | string >
 
     try {
        const  response = await fetch(`${url}allQuestions`);
-       const data = await response.json();
+       const data:Promise<Question[]> = await response.json();
        return data;
     }
     catch (e) {

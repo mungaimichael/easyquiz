@@ -1,10 +1,5 @@
-interface QuestionChoiceProps {
-    letter: string;
-    answer: string;
-    correctAnswer: string;
-    onClick: (selectedAnswer: string) => void;
-    selectedAnswer: string | null;
-}
+import {QuestionChoiceProps} from "../../types";
+
 
 export default function QuestionChoice({
                                            letter,
